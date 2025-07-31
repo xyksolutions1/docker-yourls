@@ -3,7 +3,7 @@ ARG DISTRO="alpine"
 
 FROM docker.io/tiredofit/nginx-php-fpm:${PHP_BASE}-${DISTRO}
 LABEL maintainer="Dave Conroy (github.com/tiredofit)"
-ENV YOURLS_VERSION=1.10.1 \
+ENV YOURLS_VERSION=1.10.2 \
 
     PHP_ENABLE_CREATE_SAMPLE_PHP=FALSE \
     PHP_ENABLE_CURL=TRUE \
@@ -24,6 +24,10 @@ RUN source /assets/functions/00-container && \
                     sed \
                     && \
     \
+    php-ext prepare && \
+    php-ext reset && \
+    php-ext enable core && \
+    php-ext enable core && \
     mkdir -p /assets/install && \
     curl -ssL https://github.com/YOURLS/YOURLS/archive/refs/tags/${YOURLS_VERSION}.tar.gz | tar xvfz - --strip 1 -C /assets/install/ && \
     package cleanup

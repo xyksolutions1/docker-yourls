@@ -1,3 +1,9 @@
+## 3.0.9 2025-07-31 <dave at tiredofit dot ca>
+
+   ### Added
+      - YOURLS 1.10.2
+
+
 ## 3.0.8 2025-04-27 <dave at tiredofit dot ca>
 
    ### Added
